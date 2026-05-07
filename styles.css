@@ -156,36 +156,40 @@ button {
   background: rgba(34,197,94,0.06);
   border: 1px solid rgba(34,197,94,0.20);
   border-radius: 17px;
-  padding: 10px 12px;
+  padding: 6px 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 56px;
+  min-height: 82px;
+  overflow: hidden;
 }
 
 .hearts {
-  font-size: 4.2rem;
-  line-height: 1;
+  font-size: 8rem;
+  line-height: 0.45;
   letter-spacing: 0;
   color: #ffffff;
   text-shadow: 0 0 12px rgba(255,255,255,0.22);
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 12px;
+  gap: 0;
   flex-wrap: nowrap;
   white-space: nowrap;
+  transform: translateY(-2px);
 }
 
 .heart-full,
 .heart-empty {
   display: inline-block;
-  line-height: 1;
+  line-height: 0.45;
+  width: 0.62em;
+  text-align: center;
 }
 
 .heart-full {
   color: var(--green);
-  text-shadow: 0 0 18px rgba(34,197,94,0.65);
+  text-shadow: 0 0 24px rgba(34,197,94,0.75);
 }
 
 .heart-empty {
@@ -265,14 +269,14 @@ button {
 }
 
 @keyframes gain {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.13); }
+  0%, 100% { transform: translateY(-2px) scale(1); }
+  50% { transform: translateY(-2px) scale(1.08); }
 }
 
 @keyframes lose {
-  0%, 100% { transform: translateX(0); }
-  20%, 60% { transform: translateX(-5px); }
-  40%, 80% { transform: translateX(5px); }
+  0%, 100% { transform: translateX(0) translateY(-2px); }
+  20%, 60% { transform: translateX(-5px) translateY(-2px); }
+  40%, 80% { transform: translateX(5px) translateY(-2px); }
 }
 
 @keyframes shieldGlow {
@@ -445,8 +449,8 @@ th {
   .hero-card { gap: 7px; }
   .score { font-size: clamp(3.45rem, 13.5vh, 5.6rem); }
   .btn { padding: 11px 9px; }
-  .lives-panel { min-height: 56px; padding: 7px 11px; }
-  .hearts { font-size: 4.2rem; gap: 10px; }
+  .lives-panel { min-height: 78px; padding: 5px 11px; }
+  .hearts { font-size: 7.2rem; }
   .shield-panel { min-height: 48px; padding: 7px 11px 8px; }
   .shield-bar { height: 10px; }
   .status-message { min-height: 22px; font-size: 0.76rem; }
@@ -460,5 +464,6 @@ th {
   .btn { padding: 9px 8px; border-radius: 13px; }
   .button-stack { gap: 6px; }
   .utility-row { gap: 6px; }
-  .hearts { font-size: 3.7rem; gap: 9px; }
+  .hearts { font-size: 6.5rem; }
+  .lives-panel { min-height: 72px; }
 }

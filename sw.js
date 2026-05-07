@@ -1,4 +1,4 @@
-const CACHE_NAME = "121-survival-ladder-clean-v2";
+const CACHE_NAME = "121-survival-ladder-8rem-hearts-v1";
 const FILES_TO_CACHE = [
   "./",
   "./index.html",
