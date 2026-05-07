@@ -156,46 +156,38 @@ button {
   background: rgba(34,197,94,0.06);
   border: 1px solid rgba(34,197,94,0.20);
   border-radius: 17px;
-  padding: 6px 12px;
+  padding: 10px 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 82px;
-  overflow: hidden;
+  min-height: 74px;
 }
 
 .hearts {
-  font-size: 8rem;
-  line-height: 0.45;
-  letter-spacing: 0;
-  color: #ffffff;
-  text-shadow: 0 0 12px rgba(255,255,255,0.22);
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 0;
+  gap: 14px;
   flex-wrap: nowrap;
   white-space: nowrap;
-  transform: translateY(-2px);
 }
 
-.heart-full,
-.heart-empty {
-  display: inline-block;
-  line-height: 0.45;
-  width: 0.62em;
-  text-align: center;
+.life-heart {
+  width: 48px;
+  height: 48px;
+  display: block;
+  flex: 0 0 auto;
 }
 
-.heart-full {
+.life-heart.full {
   color: var(--green);
-  text-shadow: 0 0 24px rgba(34,197,94,0.75);
+  filter: drop-shadow(0 0 10px rgba(34,197,94,0.65));
 }
 
-.heart-empty {
+.life-heart.empty {
   color: #ffffff;
-  opacity: 0.96;
-  text-shadow: 0 0 12px rgba(255,255,255,0.28);
+  filter: drop-shadow(0 0 7px rgba(255,255,255,0.25));
+  opacity: 0.95;
 }
 
 .hearts.gain {
@@ -269,14 +261,14 @@ button {
 }
 
 @keyframes gain {
-  0%, 100% { transform: translateY(-2px) scale(1); }
-  50% { transform: translateY(-2px) scale(1.08); }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
 }
 
 @keyframes lose {
-  0%, 100% { transform: translateX(0) translateY(-2px); }
-  20%, 60% { transform: translateX(-5px) translateY(-2px); }
-  40%, 80% { transform: translateX(5px) translateY(-2px); }
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
 }
 
 @keyframes shieldGlow {
@@ -449,8 +441,8 @@ th {
   .hero-card { gap: 7px; }
   .score { font-size: clamp(3.45rem, 13.5vh, 5.6rem); }
   .btn { padding: 11px 9px; }
-  .lives-panel { min-height: 78px; padding: 5px 11px; }
-  .hearts { font-size: 7.2rem; }
+  .lives-panel { min-height: 66px; padding: 7px 11px; }
+  .life-heart { width: 42px; height: 42px; }
   .shield-panel { min-height: 48px; padding: 7px 11px 8px; }
   .shield-bar { height: 10px; }
   .status-message { min-height: 22px; font-size: 0.76rem; }
@@ -464,6 +456,6 @@ th {
   .btn { padding: 9px 8px; border-radius: 13px; }
   .button-stack { gap: 6px; }
   .utility-row { gap: 6px; }
-  .hearts { font-size: 6.5rem; }
-  .lives-panel { min-height: 72px; }
+  .life-heart { width: 38px; height: 38px; }
+  .lives-panel { min-height: 60px; }
 }
